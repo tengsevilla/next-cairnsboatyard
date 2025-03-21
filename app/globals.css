@@ -1,26 +1,48 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "tailwindcss-animate";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* --text: hsl(256, 74%, 6%); */
+  /* --background: hsl(255, 67%, 99%);
+  --primary: hsl(255, 85%, 35%);
+  --secondary: hsl(240, 85%, 66%);
+  --accent: hsl(75, 63%, 49%); */
+  --text: hsl(0, 0%, 0%);
+  --background: hsl(180, 60%, 99%);
+  --primary: hsl(204, 91%, 31%);
+  --secondary: hsl(186, 24%, 83%);
+  --accent: hsl(126, 89%, 29%);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--background);
+  --color-foreground: var(--text);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+
+  --color-primary-foreground: hsl(0, 0%, 100%);
+  --color-secondary-foreground: hsl(0, 0%, 10%);
+  --color-accent-foreground: hsl(126, 89%, 90%);
+  --color-muted-foreground: hsl(0, 0%, 50%);
+  --color-muted: hsl(180, 60%, 92%);
+
+  --color-primary-dark: hsl(204, 91%, 20%);
+  --color-secondary-dark: hsl(186, 24%, 60%);
+  --color-accent-dark: hsl(126, 89%, 20%);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-gantari), sans-serif;
+}
+
+
+@layer base {
+  * {
+    @apply outline-[var(--color-primary)]/50;
+  }
+
+  body {
+    @apply bg-[var(--color-background)] text-[var(--color-foreground)];
+  }
 }
