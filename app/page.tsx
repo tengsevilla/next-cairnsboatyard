@@ -3,7 +3,7 @@ import TextRotateHero from "@/components/TextRotateHero";
 import ImageHero from "@/public/hero.jpg"
 import ImageHero2 from "@/public/hero-2.jpeg";
 import Image from "next/image";
-import { Anchor, Clock, Facebook, Instagram, Mail, Phone, ShieldCheck, Ship, Twitter, Wrench } from "lucide-react";
+import { Anchor, ShieldCheck, Ship, Wrench } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { VelocityScroll } from "@/components/ui/scroll-based-velocity";
 import { AuroraButton } from "@/components/ui/aurora-button";
@@ -12,7 +12,6 @@ import MapEmbed from "@/components/MapEmbed";
 import AnimatedList from "@/components/AnimatedList/AnimatedList";
 import { DataReviewsList } from "@/data/Reviews";
 import { DataFacility } from "@/data/Facility";
-import Link from "next/link";
 import { Footer } from "@/components/Footer";
 
 const services = [
