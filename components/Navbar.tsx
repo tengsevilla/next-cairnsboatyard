@@ -10,10 +10,9 @@ import Aurora from "./ui/Aurora";
 const MobileNavigation = dynamic(() => import("./MobileNavigation"), { ssr: false });
 
 const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Location", href: "#location" },
-    { name: "About Us", href: "#about" },
+    { name: "Home", href: "/home" },
+    { name: "Services", href: "/services" },
+    { name: "Contact Us", href: "#about" },
 ];
 
 interface Props {
@@ -22,7 +21,6 @@ interface Props {
 
 export default function LayoutApp({ children }: Props) {
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
     const [isClient, setIsClient] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
@@ -30,16 +28,6 @@ export default function LayoutApp({ children }: Props) {
     // ✅ Ensure hydration consistency
     useEffect(() => {
         setIsClient(true);
-    }, []);
-
-    // ✅ Detect scroll to change navbar background
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     // ✅ Close mobile menu when clicking outside
@@ -64,16 +52,11 @@ export default function LayoutApp({ children }: Props) {
             <div className="relative">
                 {/* Fixed Navbar */}
                 <nav
-                    className={`fixed top-0 left-0 w-full z-50 overflow-hidden transition-all duration-200 ${isScrolled
-                        ? "bg-transparent backdrop-blur-2xl shadow-lg py-3"
-                        : "bg-transparent py-6"
-                        }`}
+                    className={`fixed top-0 left-0 w-full z-50 overflow-hidden transition-all duration-200 bg-transparent backdrop-blur-2xl shadow-2xl py-3`}
                 >
                     {/* Aurora Inside Navbar */}
-                    <div className="absolute inset-0 -z-10 h-[400px]">
-                        {/*     ["#064273", "#76b6c4", "#064273"] */}
+                    <div className="absolute inset-0 -z-10 h-[400px] ">
                         <Aurora
-                            // colorStops={isScrolled ? ["#064273", "#76b6c4", "#064273"] : ["#3c4d32", "#97b55e", "#3c4d32"]}
                             colorStops={["#064273", "#76b6c4", "#064273"]}
                             blend={0.9}
                             amplitude={1.0}
@@ -93,8 +76,8 @@ export default function LayoutApp({ children }: Props) {
                                 <Link
                                     key={item.href}
                                     href={item.href}
-                                    className={`text-white hover:text-gray-300 border-b-2 ${pathname?.startsWith(item.href) ? "border-white" : "border-transparent"
-                                        }`}
+                                    className={`text-white hover:text-gray-300 border-b-2 
+                                        ${pathname?.startsWith(item.href) ? "border-white" : "border-transparent"}`}
                                 >
                                     {item.name}
                                 </Link>
@@ -121,7 +104,7 @@ export default function LayoutApp({ children }: Props) {
 
             </div>
             {/* 76px is the exact value for the navbar */}
-            <main className={`mt-[76px]`}>{children}</main>
+            <main className={`mt-[52px]`}>{children}</main>
         </>
 
     );
