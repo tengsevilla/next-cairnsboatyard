@@ -9,7 +9,7 @@ export default function Page() {
         <Navbar>
             <section
                 id="hero"
-                className="w-[calc(100%-16px)] mx-auto mt-14 h-[300px] rounded-lg bg-cover bg-center flex items-center justify-center sm:justify-start pl-0 sm:pl-64 sm:h-[400px] sm:rounded-2xl sm:w-[calc(100%-150px)]"
+                className="w-[calc(100%-16px)] mx-auto mt-18 mb-8 h-[150px] rounded-lg bg-cover bg-center flex items-center justify-center sm:justify-start pl-0 sm:pl-64 sm:h-[250px] sm:rounded-4xl sm:w-[calc(100%-400px)]"
                 style={{
                     backgroundImage: `url(${ImageHero.src})`,
                     backgroundColor: 'rgba(0, 0, 0, 0.3)',
