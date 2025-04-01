@@ -19,7 +19,7 @@ export default function Page() {
                 <h1 className="text-white text-5xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>Service Details</h1>
             </section>
             <section className="px-4 py-8">
-                <Suspense fallback={<TabsService />}>
+                <Suspense fallback={<div>Loading...</div>}>
                     <TabsService />
                 </Suspense>
 
