@@ -76,7 +76,7 @@ export default function Page() {
                     <div className="text-center text-4xl font-bold">
                         Interested? Inquire about us today!
                     </div>
-                    <AuroraButton className="bg-primary cursor-pointer" glowClassName="from-[#3c4d32] via-accent to-[#3c4d32]">
+                    <AuroraButton className="bg-primary cursor-pointer" glowClassName="from-[#f2e9a3] via-[#ffee73] to-[#f2e9a3]">
                         Contact Us
                     </AuroraButton>
                 </div>

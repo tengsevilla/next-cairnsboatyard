@@ -1,14 +1,12 @@
 "use client";
+
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
-import dynamic from "next/dynamic";
-import Aurora from "./ui/Aurora";
-
-// ✅ Dynamically import MobileNavigation to prevent SSR issues
-const MobileNavigation = dynamic(() => import("./MobileNavigation"), { ssr: false });
-
+import { motion, AnimatePresence } from "framer-motion";
+import LogoCompany from "@/public/logo.png";
+import Image from "next/image";
 const navItems = [
     { name: "Home", href: "/home" },
     { name: "Services", href: "/services" },
@@ -19,18 +17,11 @@ interface Props {
     children: React.ReactNode;
 }
 
-export default function LayoutApp({ children }: Props) {
+export default function Navbar({ children }: Props) {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
-    const [isClient, setIsClient] = useState(false);
     const navRef = useRef<HTMLDivElement>(null);
 
-    // ✅ Ensure hydration consistency
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    // ✅ Close mobile menu when clicking outside
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -40,8 +31,6 @@ export default function LayoutApp({ children }: Props) {
 
         if (isOpen) {
             document.addEventListener("mousedown", handleClickOutside);
-        } else {
-            document.removeEventListener("mousedown", handleClickOutside);
         }
 
         return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -50,71 +39,87 @@ export default function LayoutApp({ children }: Props) {
     return (
         <>
             <div className="relative">
-                {/* Fixed Navbar */}
-                <nav
-                    className={`fixed top-0 left-0 w-full z-50 overflow-hidden transition-all duration-200 bg-transparent backdrop-blur-2xl shadow-2xl py-3`}
-                >
-                    {/* Aurora Inside Navbar */}
-                    <div className="absolute inset-0 -z-10 h-[400px] ">
-                        <Aurora
-                            colorStops={["#064273", "#76b6c4", "#064273"]}
-                            blend={0.9}
-                            amplitude={1.0}
-                            speed={0.5}
-                        />
-                    </div>
-
-                    <div ref={navRef} className="container mx-auto px-6 flex justify-between items-center transition-all duration-300">
-                        {/* Logo */}
-                        <Link href="/" className="text-xl font-bold text-white ">
-                            Logo
+                <nav className="fixed top-0 left-0 w-full z-50 bg-primary-dark shadow-lg py-3 transition-all">
+                    <div
+                        ref={navRef}
+                        className="container mx-auto px-6 flex justify-between items-center"
+                    >
+                        <Link href="/" className="text-xl font-bold text-white flex items-center space-x-2">
+                            <Image
+                                src={LogoCompany as unknown as string}
+                                alt="Cains Boat Yard Logo"
+                                className="w-20 h-12"
+                            />
                         </Link>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex flex-1 justify-end space-x-6">
-                            {navItems.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    className={`text-white hover:text-gray-300 border-b-2 
-                                        ${pathname?.startsWith(item.href) ? "border-white" : "border-transparent"}`}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
+                        <div className="hidden md:flex flex-1 justify-end items-center space-x-6">
+                            {navItems.map((item) => {
+                                const isActive = pathname?.startsWith(item.href);
+                                return (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        className={`text-lg text-white relative 
+                    ${isActive ? "wave-underline" : "hover:text-gray-300"}
+                `}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                );
+                            })}
                         </div>
 
-                        {/* Contact Number - Rightmost */}
+
+
+                        {/* Contact Number */}
                         <div className="hidden md:flex items-center space-x-2 text-white font-semibold ml-6">
                             <Phone className="w-5 h-5" />
-                            <a href="tel:+61754924999" className="hover:text-gray-300">
+                            <a href="tel:+61754924999" className="hover:text-gray-300 text-lg">
                                 (07) 999 9999
                             </a>
                         </div>
 
-                        {/* Mobile Menu Button (CSR Only) */}
-                        {isClient && <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />}
+                        {/* Toggle Button */}
+                        <button
+                            className="md:hidden text-white"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
                     </div>
 
-                    {/* Mobile Navigation (CSR Only) */}
-                    {isClient && <MobileNavigation isOpen={isOpen} navItems={navItems} />}
+                    {/* Mobile Navigation with Framer Motion */}
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.div
+                                key="mobile-nav"
+                                initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                                transition={{ duration: 0.25 }}
+                                className="md:hidden px-6 pt-4 pb-6 bg-primary-dark flex flex-col items-center space-y-4"
+                            >
+                                {navItems.map((item) => (
+                                    <Link
+                                        key={item.href}
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={`text-white hover:text-gray-300 border-b ${pathname?.startsWith(item.href)
+                                            ? "border-white"
+                                            : "border-transparent"
+                                            } pb-1`}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </nav>
-
-                {/* Page Content */}
-
             </div>
-            {/* 76px is the exact value for the navbar */}
-            <main className={`mt-[52px]`}>{children}</main>
-        </>
 
+            <main className="mt-[72px]">{children}</main>
+        </>
     );
 }
-
-// ✅ Mobile Menu Button Component (CSR Only)
-const MobileMenuButton = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: (isOpen: boolean) => void }) => {
-    return (
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-    );
-};
