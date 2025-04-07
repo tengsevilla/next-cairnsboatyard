@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
-    domains: ['plus.unsplash.com', 'picsum.photos', 'images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 };
 

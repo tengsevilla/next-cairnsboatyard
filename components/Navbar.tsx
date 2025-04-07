@@ -7,10 +7,11 @@ import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import LogoCompany from "@/public/logo.png";
 import Image from "next/image";
+import { DataCompany } from "@/data/Contact";
 const navItems = [
     { name: "Home", href: "/home" },
     { name: "Services", href: "/services" },
-    { name: "Contact Us", href: "#about" },
+    { name: "Contact Us", href: "/contact" },
 ];
 
 interface Props {
@@ -75,8 +76,8 @@ export default function Navbar({ children }: Props) {
                         {/* Contact Number */}
                         <div className="hidden md:flex items-center space-x-2 text-white font-semibold ml-6">
                             <Phone className="w-5 h-5" />
-                            <a href="tel:+61754924999" className="hover:text-gray-300 text-lg">
-                                (07) 999 9999
+                            <a href={`tel:${DataCompany.contact}`} className="hover:text-gray-300 text-lg">
+                                {DataCompany.contact}
                             </a>
                         </div>
 

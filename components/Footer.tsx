@@ -1,4 +1,5 @@
-import { Clock, Phone, Mail, Facebook, Twitter, Instagram } from "lucide-react"
+import { DataCompany } from "@/data/Contact"
+import { Clock, Phone, Mail, Facebook } from "lucide-react"
 import Link from "next/link"
 
 export const Footer = () => {
@@ -50,31 +51,25 @@ export const Footer = () => {
 
                 {/* Right - Contact Information */}
                 <div>
-                    <h3 className="text-xl font-bold mb-4">Contact Information</h3>
+                    <h3 className="text-xl font-bold mb-4">Connect</h3>
                     <ul className="space-y-3">
                         <li className="flex items-center space-x-2">
                             <Phone className="w-5 h-5 text-white" />
-                            <a href="tel:+123456789" className="hover:text-secondary">
-                                +1 234 567 89
+                            <a href={`tel:${DataCompany.contact}`} className="hover:text-secondary">
+                                {DataCompany.contact}
                             </a>
                         </li>
                         <li className="flex items-center space-x-2">
                             <Mail className="w-5 h-5 text-white" />
                             <a href="mailto:info@cainsboatyard.com" className="hover:text-secondary">
-                                info@cainsboatyard.com
+                                {DataCompany.email}
                             </a>
                         </li>
                     </ul>
                     {/* Social Media Links */}
                     <div className="flex space-x-4 mt-4">
-                        <Link href="#" className="hover:text-secondary">
+                        <Link href={DataCompany.facebook} className="hover:text-secondary">
                             <Facebook className="w-6 h-6" />
-                        </Link>
-                        <Link href="#" className="hover:text-secondary">
-                            <Twitter className="w-6 h-6" />
-                        </Link>
-                        <Link href="#" className="hover:text-secondary">
-                            <Instagram className="w-6 h-6" />
                         </Link>
                     </div>
                 </div>
