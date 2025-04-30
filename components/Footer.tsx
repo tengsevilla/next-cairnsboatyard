@@ -36,15 +36,11 @@ export const Footer = () => {
                     <ul className="space-y-3">
                         <li className="flex items-center space-x-2">
                             <Clock className="w-5 h-5 text-white" />
-                            <span>Monday - Friday: 8:00 AM - 6:00 PM</span>
+                            <span>Monday - Friday: 7:00 AM - 5:00 PM</span>
                         </li>
                         <li className="flex items-center space-x-2">
                             <Clock className="w-5 h-5 text-white" />
-                            <span>Saturday: 9:00 AM - 4:00 PM</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                            <Clock className="w-5 h-5 text-white" />
-                            <span>Sunday: Closed</span>
+                            <span>Saturday - Sunday: 8:00 AM - 12:00 PM</span>
                         </li>
                     </ul>
                 </div>
@@ -61,7 +57,7 @@ export const Footer = () => {
                         </li>
                         <li className="flex items-center space-x-2">
                             <Mail className="w-5 h-5 text-white" />
-                            <a href="mailto:info@cainsboatyard.com" className="hover:text-secondary">
+                            <a href={`mailto:${DataCompany.email}`} className="hover:text-secondary">
                                 {DataCompany.email}
                             </a>
                         </li>
@@ -78,7 +74,7 @@ export const Footer = () => {
 
             {/* Copyright */}
             <div className="text-center text-sm mt-8 border-t border-border pt-4">
-                &copy; {new Date().getFullYear()} Cains Boat Yard. All rights reserved.
+                &copy; {new Date().getFullYear()} Cairns Boat Yard. All rights reserved.
             </div>
         </footer>
     )

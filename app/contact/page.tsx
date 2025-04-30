@@ -1,6 +1,6 @@
 import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import ImageHero from "@/public/hero-unsplashed.png";
+import ImageHero from "@/public/hero-services-min.png";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import FormContact from "./FormContact";
 import { FrequentlyAsked } from "./FrequentlyAsked";
@@ -46,7 +46,7 @@ export default function Page() {
                         {/* Visit Us */}
                         <div className="flex-1 px-4 py-6 sm:py-0 flex flex-col items-start text-center sm:text-left">
                             <MapPin className="w-6 h-6 mb-2 text-gray-800" />
-                            <h4 className="font-semibold text-gray-900 mb-2">Visit Our Office</h4>
+                            <h4 className="font-semibold text-gray-900 mb-2">Visit Us</h4>
                             <p className="text-gray-600">{DataCompany.address}</p>
                             <a
                                 href={DataCompany.mapLink}

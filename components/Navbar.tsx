@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import LogoCompany from "@/public/logo.png";
+import LogoCompany from "@/public/newlogo.png";
 import Image from "next/image";
 import { DataCompany } from "@/data/Contact";
 const navItems = [
@@ -48,8 +48,8 @@ export default function Navbar({ children }: Props) {
                         <Link href="/" className="text-xl font-bold text-white flex items-center space-x-2">
                             <Image
                                 src={LogoCompany as unknown as string}
-                                alt="Cains Boat Yard Logo"
-                                className="w-20 h-12"
+                                alt="Cairns Boat Yard"
+                                className="w-50 h-12"
                             />
                         </Link>
 

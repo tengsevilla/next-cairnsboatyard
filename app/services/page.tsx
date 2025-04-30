@@ -1,7 +1,7 @@
 import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Badge } from "@/components/ui/badge";
-import ImageHero from "@/public/hero-services-min.png";
+import ImageHero from "@/public/hero-services-min-2.jpg";
 import { CardService } from "./CardService";
 import { DataServices } from "@/data/Services";
 export default function Page() {
