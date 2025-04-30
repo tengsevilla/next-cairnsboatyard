@@ -1,5 +1,6 @@
 import { DataCompany } from "@/data/Contact"
 import { Clock, Phone, Mail, Facebook } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 export const Footer = () => {
@@ -51,6 +52,12 @@ export const Footer = () => {
                     <ul className="space-y-3">
                         <li className="flex items-center space-x-2">
                             <Phone className="w-5 h-5 text-white" />
+                            <a href={`tel:${DataCompany.contact}`} className="hover:text-secondary">
+                                {DataCompany.contact}
+                            </a>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <Image src="/icon-whatsapp.png" alt="Whats App" width={24} height={24} />
                             <a href={`tel:${DataCompany.contact}`} className="hover:text-secondary">
                                 {DataCompany.contact}
                             </a>

@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import TextRotateHero from "@/components/TextRotateHero";
+// import TextRotateHero from "@/components/TextRotateHero";
 import ImageHero from "@/public/hero-min.jpg"
 import ImageHero3 from "@/public/hero-3-min.jpg";
 import Image from "next/image";
@@ -28,10 +28,18 @@ export default function Page() {
             >
                 <div className="flex flex-col items-center justify-center h-full">
                     <div className="mb-4 text-center">
-                        <h1 className="text-white text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Some impactful phrase here</h1>
-                        <p className="text-white text-xl mt-2" style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                        <h1 className="text-white text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Trusted boat care and storage — adventure-ready, always.</h1>
+                        <div className="p-4 mx-4 md:mx-32 rounded" style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}>
+                            <p
+                                className="text-white text-xl mt-2"
+                                style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
+                            >
+                                A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term.
+                            </p>
+                        </div>
+
                     </div>
-                    <TextRotateHero />
+                    {/* <TextRotateHero /> */}
                 </div>
             </section>
 
@@ -47,14 +55,13 @@ export default function Page() {
                             </h2>
 
                             <p className="text-lg mb-4 text-center md:text-left">
-                                A family owned and operated business, we understand that your boat is more than just a vessel; it&#39;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term.
-                            </p>
-
-                            <p className="text-lg mb-4 text-center md:text-left">
                                 Located in the heart of this stunning marine environment, we pride ourselves on our unwavering commitment to quality, reliability, and a personal touch that sets us apart. With years of experience deeply rooted in the marine industry, our team of skilled professionals and trusted subcontractors share your passion for boating and understand the responsibility that comes with ownership.
                             </p>
                             <p className="text-lg mb-4 text-center md:text-left">
                                 We believe in treating every vessel with the utmost care and attention. From routine maintenance and essential repairs to specialized services and safe storage both in the water or dry storage in the yard, our goal is to ensure your boat is always in top condition and ready for your next adventure on the water.
+                            </p>
+                            <p className="text-lg mb-4 text-center md:text-left">
+                                Whether you require regular upkeep, specific repairs, or a secure place to store your boat, we are here to provide you with reliable and high-quality service tailored to your individual needs.
                             </p>
                         </div>
 
@@ -71,10 +78,7 @@ export default function Page() {
                     </div>
 
                     {/* Full Width: Remaining Paragraphs + Services */}
-                    <div className="mt-8 md:mt-0">
-                        <p className="text-lg mb-4 text-center md:text-left">
-                            Whether you require regular upkeep, specific repairs, or a secure place to store your boat, we are here to provide you with reliable and high-quality service tailored to your individual needs.
-                        </p>
+                    <div className="mt-8 md:mt-4">
 
                         <p className="text-lg mb-4 text-center md:text-left">
                             We look forward to the opportunity to care for your boat and become your trusted partner in your boating journey. Please do not hesitate to contact us to discuss your requirements or to learn more about our services.
