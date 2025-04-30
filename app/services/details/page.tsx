@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import ImageHero from "@/public/hero-services-min.png";
+import ImageHero from "@/public/hero-services-min-2.jpg";
 import TabsService from "./TabsService";
 import { Footer } from "@/components/Footer";
 import { Suspense } from "react";
