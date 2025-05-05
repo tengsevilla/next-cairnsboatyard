@@ -4,7 +4,10 @@ import { useState } from "react";
 import clsx from "clsx";
 import { DataServices } from "@/data/Services";
 import { usePathname, useSearchParams } from "next/navigation";
-
+import { DivBoatMaintenanceDetails } from "./DivBoatMaintenanceDetails";
+import { ListOtherServices } from "./ListOtherServices";
+import Image
+ from "next/image";
 const TabsService = () => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -13,7 +16,7 @@ const TabsService = () => {
     const [activeTab, setActiveTab] = useState(fullPath);
 
     return (
-        <div className="flex flex-col sm:flex-row w-full max-w-6xl mx-auto rounded-xl overflow-hidden sm:h-[700px]">
+        <div className="flex flex-col sm:flex-row w-full max-w-6xl mx-auto rounded-xl overflow-hidden sm:h-auto min-h-[700px]">
             {/* Tab List */}
             <div className="flex sm:flex-col bg-gray-100 p-2 sm:p-4 sm:min-w-[240px]">
                 {DataServices.map((tab) => (
@@ -41,20 +44,43 @@ const TabsService = () => {
                 <div className="text-gray-600">
                     {DataServices.find((t) => t.url === activeTab)?.details.description}
                 </div>
-                <h2 className="text-4xl font-semibold mb-2 mt-8">
-                    Benefits
-                </h2>
-                <div className="text-gray-600 mb-4">
-                    {DataServices.find((t) => t.url === activeTab)?.details.benefit}
-                </div>
-
-                <div className="text-gray-600">
-                    {DataServices.find((t) => t.url === activeTab)?.details.benefits.map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-2 mb-2">
-                            <span className="text-green-500">✔</span>
-                            <span>{benefit}</span>
+                {
+                    (DataServices.find((t) => t.url === activeTab)?.name === "Boat Maintenance") && (
+                        <DivBoatMaintenanceDetails />
+                    )
+                }
+                {
+                    (DataServices.find((t) => t.url === activeTab)?.name === "Other Services") && (
+                        <ListOtherServices />
+                    )
+                }
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+                    <div>
+                        <h2 className="text-4xl font-semibold mb-2">
+                            Benefits
+                        </h2>
+                        <div className="text-gray-600 mb-4">
+                            {DataServices.find((t) => t.url === activeTab)?.details.benefit}
                         </div>
-                    ))}
+
+                        <div className="text-gray-600">
+                            {DataServices.find((t) => t.url === activeTab)?.details.benefits.map((benefit, index) => (
+                                <div key={index} className="flex items-center gap-2 mb-2">
+                                    <span className="text-green-500">✔</span>
+                                    <span>{benefit}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <Image
+                            src={DataServices.find((t) => t.url === activeTab)?.imageUrl || ""}
+                            alt="Service Image"
+                            className="rounded-lg shadow-md max-w-full"
+                            width={500}
+                            height={300}
+                        />
+                    </div>
                 </div>
 
             </div>

@@ -14,6 +14,18 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.cairnsboatyard.com.au',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cairnsboatyard.com.au',
+      },
     ],
   },
 };
