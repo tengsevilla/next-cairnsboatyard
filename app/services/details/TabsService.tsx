@@ -1,19 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import clsx from "clsx";
 import { DataServices } from "@/data/Services";
 import { usePathname, useSearchParams } from "next/navigation";
 import { DivBoatMaintenanceDetails } from "./DivBoatMaintenanceDetails";
 import { ListOtherServices } from "./ListOtherServices";
-import Image
- from "next/image";
+import Image from "next/image";
+
 const TabsService = () => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    const service = searchParams.get('service');
-    const fullPath = `${pathname}?service=${service}`;
-    const [activeTab, setActiveTab] = useState(fullPath);
+
+    const [activeTab, setActiveTab] = useState<string | null>(null);
+
+    // Ensure activeTab is only set after mount
+    useEffect(() => {
+        const service = searchParams.get("service");
+        const fullPath = `${pathname}?service=${service}`;
+        setActiveTab(fullPath);
+    }, [pathname, searchParams]);
+
+    // Memoize active service data
+    const activeService = useMemo(() => {
+        return DataServices.find((t) => t.url === activeTab);
+    }, [activeTab]);
+
+    if (!activeService) return null; // Don't render until activeTab is ready
 
     return (
         <div className="flex flex-col sm:flex-row w-full max-w-6xl mx-auto rounded-xl overflow-hidden sm:h-auto min-h-[700px]">
@@ -38,33 +51,18 @@ const TabsService = () => {
 
             {/* Tab Content */}
             <div className="flex-1 p-4 sm:p-6">
-                <h2 className="text-4xl font-semibold mb-2">
-                    {DataServices.find((t) => t.url === activeTab)?.name}
-                </h2>
-                <div className="text-gray-600">
-                    {DataServices.find((t) => t.url === activeTab)?.details.description}
-                </div>
-                {
-                    (DataServices.find((t) => t.url === activeTab)?.name === "Boat Maintenance") && (
-                        <DivBoatMaintenanceDetails />
-                    )
-                }
-                {
-                    (DataServices.find((t) => t.url === activeTab)?.name === "Other Services") && (
-                        <ListOtherServices />
-                    )
-                }
+                <h2 className="text-4xl font-semibold mb-2">{activeService.name}</h2>
+                <div className="text-gray-600">{activeService.details.description}</div>
+
+                {activeService.name === "Boat Maintenance" && <DivBoatMaintenanceDetails />}
+                {activeService.name === "Other Services" && <ListOtherServices />}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
                     <div>
-                        <h2 className="text-4xl font-semibold mb-2">
-                            Benefits
-                        </h2>
-                        <div className="text-gray-600 mb-4">
-                            {DataServices.find((t) => t.url === activeTab)?.details.benefit}
-                        </div>
-
+                        <h2 className="text-4xl font-semibold mb-2">Benefits</h2>
+                        <div className="text-gray-600 mb-4">{activeService.details.benefit}</div>
                         <div className="text-gray-600">
-                            {DataServices.find((t) => t.url === activeTab)?.details.benefits.map((benefit, index) => (
+                            {activeService.details.benefits.map((benefit, index) => (
                                 <div key={index} className="flex items-center gap-2 mb-2">
                                     <span className="text-green-500">✔</span>
                                     <span>{benefit}</span>
@@ -73,16 +71,17 @@ const TabsService = () => {
                         </div>
                     </div>
                     <div className="flex justify-center items-center">
-                        <Image
-                            src={DataServices.find((t) => t.url === activeTab)?.imageUrl || ""}
-                            alt="Service Image"
-                            className="rounded-lg shadow-md max-w-full"
-                            width={500}
-                            height={300}
-                        />
+                        {activeService.imageUrl && (
+                            <Image
+                                src={activeService.imageUrl}
+                                alt="Service Image"
+                                className="rounded-lg shadow-md max-w-full"
+                                width={500}
+                                height={300}
+                            />
+                        )}
                     </div>
                 </div>
-
             </div>
         </div>
     );
