@@ -29,7 +29,25 @@ export const DataServices = [
                 "Extends the life of underwater components with professional antifouling and Propspeed applications.",
                 "Restores and protects topside surfaces with expert polishing and sealing."
             ]
-        }
+        },
+        images: [
+            '/services/maintenance-1.jpg',
+            '/services/maintenance-2.jpg',
+            '/services/maintenance-3.jpg',
+            '/services/maintenance-4.jpg',
+            '/services/maintenance-5.jpg',
+            '/services/maintenance-6.jpg',
+            '/services/maintenance-7.jpg',
+            '/services/maintenance-8.jpg',
+            '/services/maintenance-9.jpg',
+            '/services/maintenance-10.jpg',
+            '/services/maintenance-11.jpg',
+            '/services/maintenance-12.jpg',
+            '/services/maintenance-13.jpg',
+            '/services/maintenance-14.jpg',
+            '/services/maintenance-15.jpg',
+            '/services/maintenance-16.jpg',
+        ]
     },
     {
         name: "Docking Services", icon: <Anchor className="w-8 h-8 text-primary" />,

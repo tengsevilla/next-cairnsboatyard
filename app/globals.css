@@ -25,9 +25,9 @@
   --color-muted-foreground: hsl(0, 0%, 50%);
   --color-muted: hsl(180, 60%, 92%);
 
-  --color-primary-dark: hsl(204, 91%, 20%);
-  --color-secondary-dark: hsl(186, 24%, 60%);
-  --color-accent-dark: hsl(126, 89%, 20%);
+  --color-primary-dark: oklch(0.28 0.14 249.1);
+  --color-secondary-dark: oklch(0.75 0.06 192.0);
+  --color-accent-dark: oklch(0.29 0.14 141.5);
 }
 
 body {

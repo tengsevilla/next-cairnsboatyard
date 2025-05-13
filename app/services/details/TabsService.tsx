@@ -82,7 +82,15 @@ const TabsService = () => {
                         )}
                     </div>
                 </div>
+
+                {
+                    (activeService.images && activeService.images.length > 0) && (
+                        <></>
+
+                    )
+                }
             </div>
+
         </div>
     );
 };

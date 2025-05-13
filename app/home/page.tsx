@@ -28,10 +28,10 @@ export default function Page() {
             >
                 <div className="flex flex-col items-center justify-center h-full">
                     <div className="mb-4 text-center">
-                        <h1 className="text-white text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Best value Boat Yard for Catamaran, Trimaran and Mono's power vessel</h1>
+                        <h1 className="text-white text-4xl md:text-5xl font-bold mb-2" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Best value Boat Yard for Catamaran, Trimaran and Mono&apos;s power vessel</h1>
                         <div className="p-4 mx-4 md:mx-32 rounded" style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}>
                             <p
-                                className="text-white text-xl mt-2"
+                                className="text-white text-xl"
                                 style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
                             >
                                 A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term.
@@ -63,10 +63,13 @@ export default function Page() {
                             <p className="text-lg mb-4 text-center md:text-left">
                                 Whether you require regular upkeep, specific repairs, or a secure place to store your boat, we are here to provide you with reliable and high-quality service tailored to your individual needs.
                             </p>
+                            <p className="text-lg mb-4 text-center md:text-left">
+                                We look forward to the opportunity to care for your boat and become your trusted partner in your boating journey. Please do not hesitate to contact us to discuss your requirements or to learn more about our services.
+                            </p>
                         </div>
 
                         {/* Right Top: Image (fixed width, aligned right) */}
-                        <div className="flex justify-end items-start">
+                        <div className="flex justify-end items-center">
                             <Image
                                 src={ImageHero3}
                                 alt="Hero Image"
@@ -78,12 +81,7 @@ export default function Page() {
                     </div>
 
                     {/* Full Width: Remaining Paragraphs + Services */}
-                    <div className="mt-8 md:mt-4">
-
-                        <p className="text-lg mb-4 text-center md:text-left">
-                            We look forward to the opportunity to care for your boat and become your trusted partner in your boating journey. Please do not hesitate to contact us to discuss your requirements or to learn more about our services.
-                        </p>
-
+                    <div className="mt-4 md:mt-0">
                         {/* Services Section */}
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-8">
                             <CardServices />
