@@ -28,7 +28,7 @@ export default function Page() {
             >
                 <div className="flex flex-col items-center justify-center h-full">
                     <div className="mb-4 text-center">
-                        <h1 className="text-white text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Trusted boat care and storage — adventure-ready, always.</h1>
+                        <h1 className="text-white text-6xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Best value Boat Yard for Catamaran, Trimaran and Mono's power vessel</h1>
                         <div className="p-4 mx-4 md:mx-32 rounded" style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}>
                             <p
                                 className="text-white text-xl mt-2"

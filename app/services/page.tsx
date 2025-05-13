@@ -30,7 +30,7 @@ export default function Page() {
                             and Services
                         </h2>
                         <p className="mb-8 text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        At Cairns Boat Yard, our commitment is to provide a seamless and enjoyable experience for every boat owner. Explore our comprehensive range of boatyard services, meticulously designed to meet all your boating needs with the utmost convenience, quality, and care. We look forward to assisting you with your boating requirements.
                         </p>
 
                     </div>
