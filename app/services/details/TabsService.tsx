@@ -7,6 +7,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { DivBoatMaintenanceDetails } from "./DivBoatMaintenanceDetails";
 import { ListOtherServices } from "./ListOtherServices";
 import Image from "next/image";
+import { Gallery } from "@/components/Gallery";
+
 
 const TabsService = () => {
     const pathname = usePathname();
@@ -84,8 +86,10 @@ const TabsService = () => {
                 </div>
 
                 {
-                    (activeService.images && activeService.images.length > 0) && (
-                        <></>
+                    (activeService.gallery && activeService.gallery.length > 0) && (
+                        <div className="grid grid-cols-1 mt-4">
+                            <Gallery items={activeService.gallery} description={activeService.galleryDescription} />
+                        </div>
 
                     )
                 }

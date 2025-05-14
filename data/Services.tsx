@@ -30,7 +30,7 @@ export const DataServices = [
                 "Restores and protects topside surfaces with expert polishing and sealing."
             ]
         },
-        images: [
+        gallery: [
             '/services/maintenance-1.jpg',
             '/services/maintenance-2.jpg',
             '/services/maintenance-3.jpg',
@@ -47,7 +47,8 @@ export const DataServices = [
             '/services/maintenance-14.jpg',
             '/services/maintenance-15.jpg',
             '/services/maintenance-16.jpg',
-        ]
+        ],
+        galleryDescription: "Discover more about our maintenance services, facilities, and the stunning Cairns region.",
     },
     {
         name: "Docking Services", icon: <Anchor className="w-8 h-8 text-primary" />,
