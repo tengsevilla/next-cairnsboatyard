@@ -21,4 +21,5 @@ export const DataFacility = [
     // Missing 17
     //{ id: 18, image: `/facility/18.jpg`, height: 500 },
     { id: 20, image: `/facility/20.jpg`, height: 500 },
+    { id: 21, image: `/facility/21.jpeg`, height: 500 },
 ];

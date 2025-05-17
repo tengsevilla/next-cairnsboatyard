@@ -54,7 +54,7 @@ export const DataServices = [
         name: "Docking Services", icon: <Anchor className="w-8 h-8 text-primary" />,
         shortDescription: "Commercial-grade swing moorings available in water depths of 5 to 20 meters, suitable for vessels up to 70ft. Our dock can accommodate vessels up to 65ft in length with a 12ft draft.",
         url: "/services/details?service=docking-services",
-        imageUrl: DataFacility.find((item) => item.id === 20)?.image,
+        imageUrl: DataFacility.find((item) => item.id === 21)?.image,
         details: {
             description: "Cairns Boat Yard offers commercial-grade swing moorings available in water depths of 5 to 20 meters, suitable for vessels up to 70ft. Our dock can accommodate vessels up to 65ft in length with a 12ft draft. It is available for both short-term and long-term use and is equipped with water, as well as single and three-phase power.",
             benefit: "Secure and convenient mooring solutions with full utility access, ideal for both short and long-term stays.",
