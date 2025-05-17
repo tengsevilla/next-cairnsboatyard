@@ -95,7 +95,7 @@ const FormContact = () => {
                         className="rounded-lg object-cover mb-3"
                     />
                     <p className="font-semibold">Ben Mumby</p>
-                    <p className="text-white/70 text-sm">Owner and Proprietor</p>
+                    <p className="text-white/70 text-sm">Yard Manager</p>
                 </div>
             </div>
 

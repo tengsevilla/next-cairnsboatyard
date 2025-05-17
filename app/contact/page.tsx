@@ -1,6 +1,6 @@
 import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import ImageHero from "@/public/hero-services-min.png";
+import ImageHero from "@/public/contact-Us-bg.jpeg";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import FormContact from "./FormContact";
 import { FrequentlyAsked } from "./FrequentlyAsked";

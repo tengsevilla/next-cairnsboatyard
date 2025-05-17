@@ -19,27 +19,36 @@ export default function Page() {
             {/* Hero section */}
             <section
                 id="hero"
-                className="w-full h-170 bg-cover bg-center"
+                className="relative w-full h-170 bg-cover bg-center"
                 style={{
                     backgroundImage: `url(${ImageHero.src})`,
                     backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                    backgroundBlendMode: 'darken'
+                    backgroundBlendMode: 'darken',
                 }}
-            >
-                <div className="flex flex-col items-center justify-center h-full">
-                    <div className="mb-4 text-center">
-                        <h1 className="text-white text-4xl md:text-5xl font-bold mb-2" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}>Best value Boat Yard for Catamaran, Trimaran and Mono&apos;s power vessel</h1>
-                        <div className="p-4 mx-4 md:mx-32 rounded" style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}>
-                            <p
-                                className="text-white text-xl"
-                                style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
-                            >
-                                A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term.
-                            </p>
-                        </div>
+                >
+                {/* Centered Title */}
+                <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <h1
+                    className="text-white text-4xl md:text-5xl font-bold"
+                    style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
+                    >
+                    Best Value Boat Yard for Catamaran, Mono, Trimaran & Cabin Cruiser
+                    </h1>
+                </div>
 
+                {/* Bottom Paragraph */}
+               <div className="absolute bottom-0 w-full px-0">
+                    <div
+                        className="p-4 w-full text-left"
+                        style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}
+                    >
+                        <p
+                        className="text-white text-xl"
+                        style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
+                        >
+                        A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
+                        </p>
                     </div>
-                    {/* <TextRotateHero /> */}
                 </div>
             </section>
 

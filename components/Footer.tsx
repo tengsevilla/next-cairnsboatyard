@@ -11,23 +11,12 @@ export const Footer = () => {
 
                 {/* Left - Useful Links */}
                 <div>
-                    <h3 className="text-xl font-bold mb-4">Useful Links</h3>
+                    <h3 className="text-xl font-bold mb-4">Location</h3>
                     <ul className="space-y-2">
-                        <li>
-                            <Link href="#" className="hover:text-secondary">
-                                License Agreement
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#" className="hover:text-secondary">
-                                Terms & Conditions
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#" className="hover:text-secondary">
-                                Privacy Policy
-                            </Link>
-                        </li>
+                       <p>
+                        69 Lee Yan Rd, 
+                        East Trinity
+                        4871</p>
                     </ul>
                 </div>
 
@@ -42,6 +31,10 @@ export const Footer = () => {
                         <li className="flex items-center space-x-2">
                             <Clock className="w-5 h-5 text-white" />
                             <span>Saturday - Sunday: 8:00 AM - 12:00 PM</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                            <Clock className="w-5 h-5 text-white" />
+                            <span>7 Days a week access</span>
                         </li>
                     </ul>
                 </div>
