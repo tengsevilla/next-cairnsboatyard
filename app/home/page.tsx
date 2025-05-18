@@ -25,24 +25,28 @@ export default function Page() {
                     backgroundColor: 'rgba(0, 0, 0, 0.3)',
                     backgroundBlendMode: 'darken',
                 }}
-            >
-                {/* Centered Title and Bottom Paragraph stacked vertically */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                >
+                {/* Centered Title */}
+                <div className="absolute inset-0 flex items-center justify-center text-center px-4">
                     <h1
-                        className="text-white text-4xl md:text-5xl font-bold mb-4"
-                        style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
+                    className="text-white text-4xl md:text-5xl font-bold"
+                    style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)' }}
                     >
-                        Best Value Boat Yard for Catamaran, Mono, Trimaran & Cabin Cruiser
+                    Best Value Boat Yard for Catamaran, Mono, Trimaran & Cabin Cruiser
                     </h1>
+                </div>
+
+                {/* Bottom Paragraph */}
+               <div className="absolute bottom-0 w-full px-0">
                     <div
-                        className="p-4 w-full md:w-3/4 text-left md:text-center rounded-lg"
+                        className="p-4 w-full text-left"
                         style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}
                     >
                         <p
-                            className="text-white text-xl"
-                            style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
+                        className="text-white text-xl"
+                        style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
                         >
-                            A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
+                        A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
                         </p>
                     </div>
                 </div>
