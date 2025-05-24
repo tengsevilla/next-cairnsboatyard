@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { toast } from "react-hot-toast";;
 import emailjs from "emailjs-com";
+import { DataCompany } from "@/data/Contact";
 
 // Define your schema using Zod
 const FormSchema = z.object({
@@ -55,6 +56,8 @@ const FormContact = () => {
                 {
                     email: formData.email,                      // 👈 the email of the person you are sending to
                     user_name: formData.name,
+                    company: "Cairns Boat Yard",
+                    reply_to: DataCompany.email,
                 },
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID ?? ''        // Replace with your EmailJS public user ID
             );
@@ -67,11 +70,13 @@ const FormContact = () => {
                     email: formData.email,
                     phone: formData.phone,
                     message: formData.message,
+                    company: "Cairns Boat Yard",
+                    to_email: DataCompany.email,
                 },
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID ?? ''        // Replace with your EmailJS public user ID
             );
 
-        } catch(error) {
+        } catch (error) {
             console.error('Error sending email', error);
         }
     };

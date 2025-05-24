@@ -43,7 +43,7 @@ export default function Page() {
                         style={{ backgroundColor: 'rgba(8, 93, 150, 0.5)' }}
                     >
                         <p
-                        className="text-white text-xl"
+                        className="text-white text-xl text-center"
                         style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
                         >
                         A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
