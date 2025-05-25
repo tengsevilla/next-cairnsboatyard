@@ -58,6 +58,8 @@ const FormContact = () => {
                     user_name: formData.name,
                     company: "Cairns Boat Yard",
                     reply_to: DataCompany.email,
+                    logo_url: "https://www.cairnsboatyard.com.au/logo.png",
+                    address: DataCompany.address,
                 },
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID ?? ''        // Replace with your EmailJS public user ID
             );
@@ -72,6 +74,8 @@ const FormContact = () => {
                     message: formData.message,
                     company: "Cairns Boat Yard",
                     to_email: DataCompany.email,
+                    logo_url: "https://www.cairnsboatyard.com.au/logo.png",
+                    address: DataCompany.address,
                 },
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID ?? ''        // Replace with your EmailJS public user ID
             );
