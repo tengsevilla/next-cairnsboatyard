@@ -11,6 +11,7 @@ import { DataCompany } from "@/data/Contact";
 const navItems = [
     { name: "Home", href: "/home" },
     { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
 ];
 

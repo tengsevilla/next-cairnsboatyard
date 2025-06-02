@@ -1,11 +1,11 @@
 import { Footer } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ImageHero from "@/public/contact-Us-bg.jpeg";
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink, Facebook } from "lucide-react";
 import FormContact from "./FormContact";
-import { FrequentlyAsked } from "./FrequentlyAsked";
+// import { FrequentlyAsked } from "./FrequentlyAsked";
 import { DataCompany } from "@/data/Contact";
-
+import Image from "next/image";
 export default function Page() {
     return (
         <Navbar>
@@ -38,9 +38,14 @@ export default function Page() {
 
                         {/* Call Us */}
                         <div className="flex-1 px-4 py-6 sm:py-0 flex flex-col items-start text-center sm:text-left">
-                            <Phone className="w-6 h-6 mb-2 text-gray-800" />
+                            <Phone className="w-6 h-6 text-gray-800 mr-2" />
                             <h4 className="font-semibold text-gray-900 mb-2">Call Us</h4>
-                            <p className="text-gray-600">{DataCompany.contact}</p>
+                            <p className="text-gray-600 mb-2">{DataCompany.contact}</p>
+                            <Image className="mb-2" src="/icon-whatsapp.png" alt="Whats App" width={24} height={24} />
+                            <p className="text-gray-600 mb-2">{DataCompany.contact}</p>
+
+                            <Facebook className="w-6 h-6" />
+                            <a href={DataCompany.facebook}>Cairns Boat Yard</a>
                         </div>
 
                         {/* Visit Us */}
@@ -64,7 +69,7 @@ export default function Page() {
             <section className="pb-8 mx-4 sm:mx-0">
                 <FormContact />
             </section>
-            <section className="max-w-3xl mx-auto px-4 py-10">
+            {/* <section className="max-w-3xl mx-auto px-4 py-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold mb-2">Looking For Help?</h2>
                     <p className="text-gray-500">
@@ -73,7 +78,7 @@ export default function Page() {
                     </p>
                 </div>
                 <FrequentlyAsked />
-            </section>
+            </section> */}
             {/* Footer with Contact Us */}
             <Footer />
         </Navbar>
