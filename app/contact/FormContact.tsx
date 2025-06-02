@@ -97,7 +97,7 @@ const FormContact = () => {
 
                 <div className="flex flex-col items-start">
                     <Image
-                        src="/user.png" // Replace with your image
+                        src="/yardmanager.jpg" // Replace with your image
                         alt="Monica"
                         width={100}
                         height={100}
