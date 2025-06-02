@@ -46,7 +46,7 @@ export default function Page() {
                         className="text-white text-xl text-center"
                         style={{ textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)' }}
                         >
-                        A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or the Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
+                        A family owned and operated business, we understand that your boat is more than just a vessel; it&apos;s your gateway to adventure in Far North Queensland, the Great Barrier Reef or Worldwide, we are your trusted destination for comprehensive boat care, maintenance, and secure storage solutions both long and short term. Specialising in Multihulls and all types of vessels up to 25 tonnes.
                         </p>
                     </div>
                 </div>
